@@ -1,0 +1,40 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+html,
+body {
+  height: 96%;
+  width: 99.6%;
+  background-color: black;
+}
+
+.text-large {
+	font-size: 150%;
+}
+
+.page-holder {
+	min-height: 100vh;
+}
+
+.bg-cover {
+	background-size: cover !important;
+}
+
+.center-div {
+	margin: auto !important;
+	width: 70% !important;
+	height: 103% !important;
+	color: white !important;
+	text-align: center !important;
+}
+
+.border-2 {
+	border-width: 2px !important;
+}
+
+#idContainer1 {
+	overflow: hidden !important;
+}
+
+#idContainer2 {
+	overflow: auto !important;
+	overflow-x: hidden !important;
+}

@@ -1,0 +1,39 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+html,
+body {
+  height: 96%;
+  width: 99.6%;
+  background-color: black;
+}
+
+.text-large {
+	font-size: 150%;
+}
+
+.page-holder {
+	min-height: 100vh;
+}
+
+.bg-cover {
+	background-size: cover !important;
+}
+
+.border-2 {
+	border-width: 2px !important;
+}
+
+div.velicina {
+	display: block !important;
+	height: 300px !important;
+	margin: auto !important;
+}
+
+div.absolute {
+	position: absolute !important;
+	bottom: 7px !important;
+	width: 98.5% !important;
+}
+
+.skrol {
+	overflow-y: scroll;
+}
