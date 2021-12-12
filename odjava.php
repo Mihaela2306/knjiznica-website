@@ -3,5 +3,5 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: ../knjiznica/pocetna.php");
+header("Location: ../index.php");
 exit();
