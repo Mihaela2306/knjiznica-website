@@ -21,7 +21,7 @@
 			<h2><small>Dobrodošli u Books Deluxe knjižnicu. Ovdje ćete moći pretraživati, posuđivati te vraćati knjige. Moći ćete ocijenjivati knjigu po želji, dodavati knjige na popis knjiga koje želite pročitati i slično. Uživajte!</small></h2>
 			<div class="row pb-2">
 				<div class="col-6" align="center">
-					<a href="http://localhost/knjiznica/popis_knjiga.php" type="button" style="height:47px" class="btn btn-success btn-block border border-light btn-sm border-2"><h4><small>Popis knjiga</small></h4></a>
+					<a href="https://knjiznica-mihaela.herokuapp.com/popis_knjiga.php" type="button" style="height:47px" class="btn btn-success btn-block border border-light btn-sm border-2"><h4><small>Popis knjiga</small></h4></a>
 				</div>
 				<div class="col-6 user-dropdown text-center" align="center">
 					<div class="dropdown">
@@ -29,19 +29,19 @@
 							<h4><small>Žanrovi</small></h4>
 						</button>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="http://localhost/knjiznica/popis_knjiga.php?zanr=drama"><h5><small>Drama</small></h5></a>
-							<a class="dropdown-item" href="http://localhost/knjiznica/popis_knjiga.php?zanr=enciklopedistika"><h5><small>Enciklopedistika</small></h5></a>
-							<a class="dropdown-item" href="http://localhost/knjiznica/popis_knjiga.php?zanr=fantastika"><h5><small>Fantastika</small></h5></a>
-							<a class="dropdown-item" href="http://localhost/knjiznica/popis_knjiga.php?zanr=humoristika"><h5><small>Humoristični romani</small></h5></a>
-							<a class="dropdown-item" href="http://localhost/knjiznica/popis_knjiga.php?zanr=krimi"><h5><small>Kriminalistični romani</small></h5></a>
-							<a class="dropdown-item" href="http://localhost/knjiznica/popis_knjiga.php?zanr=putopis"><h5><small>Putopis</small></h5></a>
-							<a class="dropdown-item" href="http://localhost/knjiznica/popis_knjiga.php?zanr=scifi"><h5><small>Znanstvena fantastika</small></h5></a>
+							<a class="dropdown-item" href="https://knjiznica-mihaela.herokuapp.com/popis_knjiga.php?zanr=drama"><h5><small>Drama</small></h5></a>
+							<a class="dropdown-item" href="https://knjiznica-mihaela.herokuapp.com/popis_knjiga.php?zanr=enciklopedistika"><h5><small>Enciklopedistika</small></h5></a>
+							<a class="dropdown-item" href="https://knjiznica-mihaela.herokuapp.com/popis_knjiga.php?zanr=fantastika"><h5><small>Fantastika</small></h5></a>
+							<a class="dropdown-item" href="https://knjiznica-mihaela.herokuapp.com/popis_knjiga.php?zanr=humoristika"><h5><small>Humoristični romani</small></h5></a>
+							<a class="dropdown-item" href="https://knjiznica-mihaela.herokuapp.com/popis_knjiga.php?zanr=krimi"><h5><small>Kriminalistični romani</small></h5></a>
+							<a class="dropdown-item" href="https://knjiznica-mihaela.herokuapp.com/popis_knjiga.php?zanr=putopis"><h5><small>Putopis</small></h5></a>
+							<a class="dropdown-item" href="https://knjiznica-mihaela.herokuapp.com/popis_knjiga.php?zanr=scifi"><h5><small>Znanstvena fantastika</small></h5></a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-			<form  class="needs-validation" action="http://localhost/knjiznica/popis_knjiga.php" method="post" novalidate>
+			<form  class="needs-validation" action="https://knjiznica-mihaela.herokuapp.com/popis_knjiga.php" method="post" novalidate>
 				<div class="input-group mb-3 col-12">
 					<input type="text" style="width:478px" class="form-control form-control-lg" name="search" placeholder="Pretraži..." required>
 					<div class="valid-feedback"></div>
