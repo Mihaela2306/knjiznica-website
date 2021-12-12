@@ -27,6 +27,7 @@ if(isset($_POST["submit"])){ //provjeravamo ako je korisnik došao sa signup str
 	}
 	
 	createUser($conn, $name, $email, $username, $pwd, $admin);
+	header("Location: knjiznica-mihaela.herokuapp.com/index.php");
 	
 } else {
 	header("Location: knjiznica-mihaela.herokuapp.com/registriraj_se.php");
