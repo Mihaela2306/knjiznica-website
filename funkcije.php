@@ -80,7 +80,6 @@ function createUser($conn, $name, $email, $username, $pwd, $admin){
 	mysqli_stmt_execute($stmt);
 	mysqli_stmt_close($stmt);
 	header("Location: registriraj_se.php?error=none");
-	exit();
 }
 
 function loginUser($conn, $username, $pwd){
