@@ -7,7 +7,7 @@
 		$ID = $_GET["knjigaId"];
 		$sql = "SELECT * FROM knjige WHERE id='" . $ID . "'";
 	} else {
-		header("Location: ../knjiznica/pocetna.php");
+		header("Location: ../index.php");
 	}
 	
 	$idKorisnika = $_SESSION['id'];
@@ -25,7 +25,7 @@
 			} else if ($ratingKnjige < 1 || $ratingKnjige > 10){
 				echo "<script>alert('Nevažeća ocjena upisana!')</script>";
 			} else {
-				header("Location: ../knjiznica/dodajKnjigu.php?knjigaId=" . $ID . "&rating=" . $ratingKnjige . "&korisnikId=" . $idKorisnika);
+				header("Location: ../dodajKnjigu.php?knjigaId=" . $ID . "&rating=" . $ratingKnjige . "&korisnikId=" . $idKorisnika);
 			}
 		}
 	}
@@ -36,7 +36,7 @@
 			if($broj < 0){
 				echo "<script>alert('Nevažeća količina primjeraka upisana!')</script>";
 			} else {
-				header("Location: ../knjiznica/promijeniprimjerke.php?knjigaId=" . $ID . "&broj=" . $broj . "");
+				header("Location: ../promijeniprimjerke.php?knjigaId=" . $ID . "&broj=" . $broj . "");
 			}
 		}
 	}
