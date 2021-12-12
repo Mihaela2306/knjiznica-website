@@ -9,11 +9,11 @@ if(isset($_POST["submit"])){ //provjeravamo ako je korisnik došao sa signup str
 	require_once 'funkcije.php';
 	
 	if(invalidUid($username) !== false){
-		header("Location: ../knjiznica/promjenauid.php?error=invaliduid");
+		header("Location: ../promjenauid.php?error=invaliduid");
 		exit();
 	}
 	if(newUidExists($conn, $username) !== false){
-		header("Location: ../knjiznica/promjenauid.php?error=usernametaken");
+		header("Location: ../promjenauid.php?error=usernametaken");
 		exit();
 	}
 	
@@ -22,12 +22,12 @@ if(isset($_POST["submit"])){ //provjeravamo ako je korisnik došao sa signup str
 	
 	$result = mysqli_query($conn, $query);
 	if($result){
-		header("Location: ../knjiznica/promjenauid.php?error=none");
+		header("Location: ../promjenauid.php?error=none");
 	} else {
 		echo("UPDATE komanda nije uspjela. Kontaktirajte Web administratora!");
 	}
 	
 }else{
-		header("Location: ../knjiznica/promjenauid.php");
+		header("Location: ../promjenauid.php");
 		exit();
 }
