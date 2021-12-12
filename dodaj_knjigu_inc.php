@@ -17,6 +17,6 @@ if(isset($_POST["submit"])){ //provjeravamo ako je korisnik došao sa signup str
 	createBook($conn, $name, $author, $year, $genre, $nakladnik, $language, $brPrimjeraka, $opis, $picture);
 	
 } else {
-	header("Location: ../knjiznica/registriraj_se.php");
+	header("Location: ../dodaj_knjigu.php");
 	exit();
 }
