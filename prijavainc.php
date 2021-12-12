@@ -10,6 +10,6 @@ if(isset($_POST["submit"])){
 	
 	loginUser($conn, $username, $pwd);
 } else {
-	header("Location: ../knjiznica/prijava.php");
+	header("Location: ../prijava.php");
 	exit();
 }
