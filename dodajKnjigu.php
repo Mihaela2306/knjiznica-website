@@ -7,10 +7,10 @@ if(isset($_GET["knjigaId"]) && isset($_GET["rating"]) && isset($_GET["korisnikId
 	$rating = $_GET["rating"];
 	$idKorisnika = $_GET["korisnikId"];
 } else {
-	header("Location: ../knjiznica/knjiga.php?knjigaId=" . $idKnjige . "&dodan=error");
+	header("Location: knjiga.php?knjigaId=" . $idKnjige . "&dodan=error");
 }
 
 $query = "INSERT INTO korisnik_knjiga (korisnikId, knjigaId, rating) VALUES ('$idKorisnika', '$idKnjige', '$rating')";
 $result = mysqli_query($conn, $query);
 
-header("Location: ../knjiznica/knjiga.php?dodan=success&knjigaId=" . $idKnjige . "");
+header("Location: knjiga.php?dodan=success&knjigaId=" . $idKnjige . "");
