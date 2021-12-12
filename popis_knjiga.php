@@ -57,7 +57,7 @@
 		
 		$result = $conn->query($sql);
 		if(!($result->num_rows > 0)){
-			echo "<div class='row'><div class='col-3'></div><div class='bg-dark border-light border border-2 col-6'><a href='http://localhost/knjiznica/pocetna.php' class='text-success'><h2>Ne postoji knjiga pod ovim upitom! Odi natrag.</h2></a></div><div class='col-3'></div></div></div>";
+			echo "<div class='row'><div class='col-3'></div><div class='bg-dark border-light border border-2 col-6'><a href='https://knjiznica-mihaela.herokuapp.com/index.php' class='text-success'><h2>Ne postoji knjiga pod ovim upitom! Odi natrag.</h2></a></div><div class='col-3'></div></div></div>";
 		}
 		
 		if($result->num_rows > 0){
@@ -66,7 +66,7 @@
 				echo "<div class='col-3'></div>";
 				echo "<div class='bg-dark border-light border border-2 col-6 mb-2'>";
 				?>
-				<a class="text-success" href="http://localhost/knjiznica/knjiga.php?knjigaId=<?php echo $row['id']?>"><div class="row justify-content-center align-items-center"><h2><?php echo $row['ime']?></h2></div>
+				<a class="text-success" href="https://knjiznica-mihaela.herokuapp.com/knjiga.php?knjigaId=<?php echo $row['id']?>"><div class="row justify-content-center align-items-center"><h2><?php echo $row['ime']?></h2></div>
 				<?php
 				echo "<div class='row justify-content-center align-items-center'><h4><small>" . $row['autor'] . "</small></h4></div>";
 				echo "<div class='row justify-content-center align-items-center'><h4><small>" . $row['godina'] . "</small></h4></div>";
