@@ -12,6 +12,6 @@ if(isset($_POST["submit"])){
 	posudi($korisnik, $knjiga, $conn);
 	
 } else {
-	header("Location: ../knjiznica/posudba.php");
+	header("Location: ../posudba.php");
 	exit();
 }
