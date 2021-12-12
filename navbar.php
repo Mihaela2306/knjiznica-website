@@ -17,9 +17,9 @@
 <body>
 	<nav class="navbar navbar-expand-sm bg-success navbar-dark justify-content-center fixed-top border-bottom border-light border-2">
 		<ul class="navbar-nav">
-			<a href="pocetna.php" class="navbar-brand"><h4>Books Deluxe</h4></a>
+			<a href="index.php" class="navbar-brand"><h4>Books Deluxe</h4></a>
 			<li class="nav-item">
-				<a href="pocetna.php" class="nav-link text-white"><h4><small>Početna</small></h4></a>
+				<a href="index.php" class="nav-link text-white"><h4><small>Početna</small></h4></a>
 			</li>
 			<?php
 				if(isset($_SESSION["id"])){
