@@ -70,7 +70,7 @@ function createUser($conn, $name, $email, $username, $pwd, $admin){
 	$sql = "INSERT INTO korisnici (imeKorisnika, emailKorisnika, uidKorisnika, lozinka, admin) values (?, ?, ?, ?, ?);";
 	$stmt = mysqli_stmt_init($conn);
 	if(!mysqli_stmt_prepare($stmt, $sql)){
-		header("Location: ../knjiznica/registriraj_se.php?error=stmtfailed");
+		header("Location: registriraj_se.php?error=stmtfailed");
 		exit();
 	}
 	
@@ -79,7 +79,7 @@ function createUser($conn, $name, $email, $username, $pwd, $admin){
 	mysqli_stmt_bind_param($stmt, 'ssssi', $name, $email, $username, $hashedPwd, $admin);
 	mysqli_stmt_execute($stmt);
 	mysqli_stmt_close($stmt);
-	header("Location: ../knjiznica/registriraj_se.php?error=none");
+	header("Location: registriraj_se.php?error=none");
 	exit();
 }
 
