@@ -78,7 +78,7 @@
 						echo "<div class='row'>";
 						echo "<div class='bg-dark border-light border border-2'>";
 						?>
-						<a class="text-success" href="http://localhost/knjiznica/knjiga.php?knjigaId=<?php echo $rows['id']?>"><div class="row justify-content-center align-items-center"><h2><?php echo $rows['ime']?></h2></div>
+						<a class="text-success" href="https://knjiznica-mihaela.herokuapp.com/knjiga.php?knjigaId=<?php echo $rows['id']?>"><div class="row justify-content-center align-items-center"><h2><?php echo $rows['ime']?></h2></div>
 						<?php
 						echo "<div class='row justify-content-center align-items-center'><h4><small>" . $rows['autor'] . "</small></h4></div>";
 						echo "<div class='row justify-content-center align-items-center'><h4><small>" . $rows['godina'] . "</small></h4></div>";
