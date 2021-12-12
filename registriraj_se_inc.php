@@ -12,25 +12,25 @@ if(isset($_POST["submit"])){ //provjeravamo ako je korisnik došao sa signup str
 	require_once 'funkcije.php';
 	
 	if(invalidUid($username) !== false){
-		header("Location: knjiznica-mihaela.herokuapp.com/registriraj_se.php?error=invaliduid");
+		header("Location: registriraj_se.php?error=invaliduid");
 		exit();
 	}
 	
 	if(pwdMatch($pwd, $pwdRepeat) !== false){
-		header("Location: knjiznica-mihaela.herokuapp.com/registriraj_se.php?error=passwordsdontmatch");
+		header("Location: registriraj_se.php?error=passwordsdontmatch");
 		exit();
 	}
 	
 	if(uidExists($conn, $username, $email) !== false){
-		header("Location: knjiznica-mihaela.herokuapp.com/registriraj_se.php?error=usernametaken");
+		header("Location: registriraj_se.php?error=usernametaken");
 		exit();
 	}
 	
 	createUser($conn, $name, $email, $username, $pwd, $admin);
-	header("Location: knjiznica-mihaela.herokuapp.com/index.php");
+	header("Location: index.php");
 	exit();
 	
 } else {
-	header("Location: knjiznica-mihaela.herokuapp.com/registriraj_se.php");
+	header("Location: registriraj_se.php");
 	exit();
 }
