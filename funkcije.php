@@ -1,5 +1,7 @@
 <?php
 
+require_once 'dbh.php';
+
 function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat){
 	$result;
 	if(empty($name) || empty($email) || empty($username) || empty($pwd) || empty($pwdRepeat)){
@@ -47,7 +49,7 @@ function uidExists($conn, $username, $email){
 	$sql = "SELECT * FROM korisnici WHERE uidKorisnika = ? OR emailKorisnika = ?;";
 	$stmt = mysqli_stmt_init($conn);
 	if(!mysqli_stmt_prepare($stmt, $sql)){
-		header("Location: ../knjiznica/signup.php?error=stmtfailed");
+		header("Location: ../signup.php?error=stmtfailed");
 		exit();
 	}	
 	mysqli_stmt_bind_param($stmt, "ss", $username, $email);
@@ -86,7 +88,7 @@ function loginUser($conn, $username, $pwd){
 	$uidExists = uidExists($conn, $username, $username);
 	
 	if($uidExists === false){
-		header("location: ../knjiznica/prijava.php?error=wronglogin");
+		header("location: ../prijava.php?error=wronglogin");
 		exit();
 	}
 	
@@ -94,13 +96,13 @@ function loginUser($conn, $username, $pwd){
 	$checkPwd = password_verify($pwd, $pwdHashed);
 	
 	if($checkPwd === false){
-		header("location: ../knjiznica/prijava.php?error=wronglogin");
+		header("location: ../prijava.php?error=wronglogin");
 		exit();
 	}else if($checkPwd === true){
 		session_start();
 		$_SESSION["id"] = $uidExists["id"];
 		$_SESSION["uidKorisnika"] = $uidExists["uidKorisnika"];
-		header("location: ../knjiznica/pocetna.php");
+		header("location: ../index.php");
 		exit();
 	}
 }
@@ -115,7 +117,7 @@ function posudi($korisnik, $knjiga, $conn){
 	$rezultattri = mysqli_query($conn, $upittri);
 	
 	if (mysqli_num_rows($rezultat) == 0 || mysqli_num_rows($rezultattri) == 0){
-		header("Location: ../knjiznica/posudba.php?error=nepostoji");
+		header("Location: ../posudba.php?error=nepostoji");
 		exit();
 	}
 	
@@ -126,7 +128,7 @@ function posudi($korisnik, $knjiga, $conn){
 	$row = mysqli_fetch_assoc($result);
 	$novo = $row['brPrimjeraka'] - 1;
 	if($novo <= -1){
-		header("Location: ../knjiznica/posudba.php?error=premalo");
+		header("Location: ../posudba.php?error=premalo");
 	} else {
 		$upitdva = "UPDATE knjige SET brPrimjeraka = " . $novo . " WHERE id = '" . $knjiga . "'";
 		$rezultatdva = mysqli_query($conn, $upitdva);
@@ -134,13 +136,13 @@ function posudi($korisnik, $knjiga, $conn){
 		$query = "INSERT INTO posudjeno (idKorisnik, idKnjiga) values (?, ?);";
 		$stmt = mysqli_stmt_init($conn);
 		if(!mysqli_stmt_prepare($stmt, $query)){
-			header("Location: ../knjiznica/posudba.php?error=stmtfailed");
+			header("Location: ../posudba.php?error=stmtfailed");
 			exit();
 		} 
 		mysqli_stmt_bind_param($stmt, 'ii', $korisnik, $knjiga);
 		mysqli_stmt_execute($stmt);
 		mysqli_stmt_close($stmt);
-		header("Location: ../knjiznica/posudba.php?error=none");
+		header("Location: ../posudba.php?error=none");
 	}
 }
 
@@ -149,7 +151,7 @@ function vrati($korisnik, $knjiga, $conn){
 	$rezultatdva = mysqli_query($conn, $upitdva);
 	
 	if (mysqli_num_rows($rezultatdva) == 0){
-		header("Location: ../knjiznica/vracanje.php?error=nepostoji");
+		header("Location: ../vracanje.php?error=nepostoji");
 		exit();
 	}
 	
@@ -167,23 +169,23 @@ function vrati($korisnik, $knjiga, $conn){
 	$rezultat = mysqli_query($conn, $upit);
 	
 	if($result & $rezultat){
-		header("Location: ../knjiznica/vracanje.php?error=none");
+		header("Location: ../vracanje.php?error=none");
 	} else {
-		header("Location: ../knjiznica/vracanje.php?error=yes");
+		header("Location: ../vracanje.php?error=yes");
 	}
 }
 function createBook($conn, $name, $author, $year, $genre, $nakladnik, $language, $brPrimjeraka, $opis, $picture){
 	$sql = "INSERT INTO knjige (ime, autor, godina, zanr, nakladnik, jezik, brPrimjeraka, opis, slika) values (?, ?, ?, ?, ?, ?, ?, ?, ?);";
 	$stmt = mysqli_stmt_init($conn);
 	if(!mysqli_stmt_prepare($stmt, $sql)){
-		header("Location: ../knjiznica/dodaj_knjigu.php?error=stmtfailed");
+		header("Location: ../dodaj_knjigu.php?error=stmtfailed");
 		exit();
 	}
 	
 	mysqli_stmt_bind_param($stmt, 'ssisssiss', $name, $author, $year, $genre, $nakladnik, $language, $brPrimjeraka, $opis, $picture);
 	mysqli_stmt_execute($stmt);
 	mysqli_stmt_close($stmt);
-	header("Location: ../knjiznica/dodaj_knjigu.php?error=none");
+	header("Location: ../dodaj_knjigu.php?error=none");
 	exit();
 }
 
@@ -262,7 +264,7 @@ function newUidExists($conn, $username){
 	$sql = "SELECT * FROM korisnici WHERE uidKorisnika = '$username';";
 	$stmt = mysqli_stmt_init($conn);
 	if(!mysqli_stmt_prepare($stmt, $sql)){
-		header("Location: ../knjiznica/promjenauid.php?error=stmtfailed");
+		header("Location: ../promjenauid.php?error=stmtfailed");
 		exit();
 	}	
 	mysqli_stmt_execute($stmt);
