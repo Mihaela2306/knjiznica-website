@@ -11,7 +11,7 @@ if(isset($_POST["submit"])){
 	require_once 'funkcije.php';
 	
 	if(deleteLoginConfirm($conn, $username, $pwd, $idKorisnika) === false){
-		header("Location: ../knjiznica/delete.php?error=wronginput");
+		header("Location: ../delete.php?error=wronginput");
 		exit();
 	}
 	
@@ -19,12 +19,12 @@ if(isset($_POST["submit"])){
 	
 	$result = mysqli_query($conn, $query);
 	if($result){
-		header("Location: ../knjiznica/odjava.php");
+		header("Location: ../odjava.php");
 	} else {
 		echo("UPDATE komanda nije uspjela. Kontaktirajte Web administratora!");
 	}
 	
 }else{
-	header("Location: ../knjiznica/delete.php");
+	header("Location: ../delete.php");
 	exit();
 }
